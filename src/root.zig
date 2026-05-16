@@ -7,6 +7,7 @@ pub const @"006" = @import("answers/006.zig");
 pub const @"007" = @import("answers/007.zig");
 pub const @"008" = @import("answers/008.zig");
 pub const @"009" = @import("answers/009.zig");
+pub const @"010" = @import("answers/010.zig");
 
 test "basic add functionality" {
     _ = @import("answers/001.zig");
@@ -18,4 +19,5 @@ test "basic add functionality" {
     _ = @import("answers/007.zig");
     _ = @import("answers/008.zig");
     _ = @import("answers/009.zig");
+    _ = @import("answers/010.zig");
 }
