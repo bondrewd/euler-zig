@@ -29,5 +29,6 @@ pub fn main(init: std.process.Init) !void {
     try stdout_writer.print("Problem 005: {d}\n", .{euler.@"005".solution(20, gpa)});
     try stdout_writer.print("Problem 006: {d}\n", .{euler.@"006".solution(100)});
     try stdout_writer.print("Problem 007: {d}\n", .{euler.@"007".solution(10_001)});
+    try stdout_writer.print("Problem 008: {d}\n", .{euler.@"008".solution(13, gpa)});
     try stdout_writer.flush();
 }
