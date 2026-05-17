@@ -4,52 +4,42 @@ const math = std.math;
 pub fn solution(n: u64) u64 {
     var count: u64 = 0;
 
-    var sum: u64 = 0;
+    var p200: u64 = 0;
     while (true) {
-        var p200: u64 = 0;
+        var p100: u64 = 0;
         while (true) {
-            var p100: u64 = 0;
+            var p50: u64 = 0;
             while (true) {
-                var p50: u64 = 0;
+                var p20: u64 = 0;
                 while (true) {
-                    var p20: u64 = 0;
+                    var p10: u64 = 0;
                     while (true) {
-                        var p10: u64 = 0;
+                        var p5: u64 = 0;
                         while (true) {
-                            var p5: u64 = 0;
+                            var p2: u64 = 0;
                             while (true) {
-                                var p2: u64 = 0;
-                                while (true) {
-                                    sum = p200 * 200 + p100 * 100 + p50 * 50 + p20 * 20 + p10 * 10 + p5 * 5 + p2 * 2;
-                                    if (sum <= n) count += 1;
-                                    if (sum > n) break;
-                                    p2 += 1;
-                                }
-                                sum = p200 * 200 + p100 * 100 + p50 * 50 + p20 * 20 + p10 * 10 + p5 * 5;
+                                const sum: u64 = p200 + p100 + p50 + p20 + p10 + p5 + p2;
+                                if (sum <= n) count += 1;
                                 if (sum > n) break;
-                                p5 += 1;
+                                p2 += 2;
                             }
-                            sum = p200 * 200 + p100 * 100 + p50 * 50 + p20 * 20 + p10 * 10;
-                            if (sum > n) break;
-                            p10 += 1;
+                            if (p200 + p100 + p50 + p20 + p10 + p5 > n) break;
+                            p5 += 5;
                         }
-                        sum = p200 * 200 + p100 * 100 + p50 * 50 + p20 * 20;
-                        if (sum > n) break;
-                        p20 += 1;
+                        if (p200 + p100 + p50 + p20 + p10 > n) break;
+                        p10 += 10;
                     }
-                    sum = p200 * 200 + p100 * 100 + p50 * 50;
-                    if (sum > n) break;
-                    p50 += 1;
+                    if (p200 + p100 + p50 + p20 > n) break;
+                    p20 += 20;
                 }
-                sum = p200 * 200 + p100 * 100;
-                if (sum > n) break;
-                p100 += 1;
+                if (p200 + p100 + p50 > n) break;
+                p50 += 50;
             }
-            sum = p200 * 200;
-            if (sum > n) break;
-            p200 += 1;
+            if (p200 + p100 > n) break;
+            p100 += 100;
         }
-        if (sum > n) break;
+        if (p200 > n) break;
+        p200 += 200;
     }
 
     return count;
