@@ -18,10 +18,9 @@ pub fn solution(n: u64) u64 {
                         while (true) {
                             var p2: u64 = 0;
                             while (true) {
-                                const sum: u64 = p200 + p100 + p50 + p20 + p10 + p5 + p2;
-                                if (sum <= n) count += 1;
-                                if (sum > n) break;
+                                if (p200 + p100 + p50 + p20 + p10 + p5 + p2 > n) break;
                                 p2 += 2;
+                                count += 1;
                             }
                             if (p200 + p100 + p50 + p20 + p10 + p5 > n) break;
                             p5 += 5;
